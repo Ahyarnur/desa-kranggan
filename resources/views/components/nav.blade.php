@@ -11,9 +11,9 @@
 
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-6 text-neutral-50 font-medium">
-            <a href="#" class="hover:text-amber-400 transition duration-300">Beranda</a>
-            <a href="#" class="hover:text-amber-400 transition duration-300">Pemerintahan</a>
-            <a href="#" class="hover:text-amber-400 transition duration-300">Statistik</a>
+            <a href="/index" class="hover:text-amber-400 transition duration-300">Beranda</a>
+            <a href="pemerintah" class="hover:text-amber-400 transition duration-300">Pemerintahan</a>
+            <a href="/statistik" class="hover:text-amber-400 transition duration-300">Statistik</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Layanan</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Berita</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Galeri</a>
