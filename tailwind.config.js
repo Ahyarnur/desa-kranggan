@@ -15,11 +15,15 @@ export default {
                 sans: ['poppins', 'sans-serif'],
             },
             colors: {
-                nav: '#003366',
+                nav: '#FFFFFF',
+                nav2: '#003366',
                 btp: '#800000',
                 bts: '#FFD700',
                 abu: '#F5F5F5',
-                text: '#333333'
+                text: '#333333',
+                textnav: '#2ECA8B',
+                footer: '#202942',
+                bgp: '#F8F9Fa'
               },
         },
     },

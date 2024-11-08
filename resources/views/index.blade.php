@@ -1,13 +1,32 @@
 <x-tail/>
-<body class="bg-abu text-sm">
+<body class="bg-bgp">
 <x-nav withoutBg/>
-<section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply -mt-20">
+
+<section class="relative bg-center bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-900 bg-blend-multiply -mt-20">
+    
+    <!-- SVG Lengkungan Custom -->
+    
+    
+    <!-- Konten Teks -->
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Selamat Datang Di Desa Kranggan</h1>
-        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Kranggan adalah desa di kecamatan Pekuncen, Banyumas, Jawa Tengah, Indonesia. Desa Desa Kranggan merupakan desa dengan luas wilayah terkecil di kecamatan Pekuncen sehingga hanya memiliki dua wilayah pedukuhan saja.</p>
-        
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+            Selamat Datang Di Desa Kranggan
+        </h1>
+        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+            Kranggan adalah desa di kecamatan Pekuncen, Banyumas, Jawa Tengah, Indonesia. Desa Desa Kranggan merupakan desa dengan luas wilayah terkecil di kecamatan Pekuncen sehingga hanya memiliki dua wilayah pedukuhan saja.
+        </p>
+    </div>
+
+    <div class="absolute -bottom-44 left-0 w-full overflow-hidden leading-[0]">
+        <svg width="100%" height="300" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 C480,160 960,160 1440,0 L1440,320 L0,320 Z" fill="#ffffff" />
+        </svg>
     </div>
 </section>
+
+<div>
+    
+</div>
     <main class="container mx-auto py-10 px-4">
         <section class="mt-12">
             <h3 class="text-3xl font-bold text-gray-800 mb-6">Berita Terbaru</h3>
@@ -103,14 +122,31 @@
     <x-footer/>
     <script>
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-              navbar.classList.remove('bg-transparent');
-              navbar.classList.add('bg-nav');
-            } else {
-              navbar.classList.remove('bg-nav');
-              navbar.classList.add('bg-transparent');
-            }
-          });
+        const navbar = document.getElementById('navbar');
+        const logoTitle = document.getElementById('logoTitle');
+        const logoSubtitle = document.getElementById('logoSubtitle');
+        
+        if (window.scrollY > 50) {
+            // Tambahkan latar belakang putih pada navbar
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-nav');
+
+            // Ubah teks menjadi hitam
+            logoTitle.classList.remove('text-white');
+            logoTitle.classList.add('text-black');
+            logoSubtitle.classList.remove('text-white');
+            logoSubtitle.classList.add('text-black');
+        } else {
+            // Kembalikan latar belakang transparan pada navbar
+            navbar.classList.remove('bg-nav');
+            navbar.classList.add('bg-transparent');
+
+            // Kembalikan teks menjadi putih
+            logoTitle.classList.remove('text-black');
+            logoTitle.classList.add('text-white');
+            logoSubtitle.classList.remove('text-black');
+            logoSubtitle.classList.add('text-white');
+        }
+    });
     </script>
 </body>
