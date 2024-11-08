@@ -1,5 +1,5 @@
 <x-tail/>
-<body class="bg-abu">
+<body class="bg-abu text-sm">
     <x-nav/>
     <main class="container mx-auto py-10 px-4">
         <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">Statistik Desa Kranggan</h2>

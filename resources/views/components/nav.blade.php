@@ -1,8 +1,10 @@
-<header class="bg-nav shadow-md sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-8">
+@props(['withoutBg' => false])
+
+<header class="{{ $withoutBg ? '' : 'bg-nav' }} shadow-md sticky top-0 z-50" id="navbar">
+    <div class="container mx-auto flex justify-between items-center h-20 px-6 lg:px-8">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-            <img src="{{ url('logo.png') }}" alt="" class="h-10 w-10">
+            <img src="{{ url('logo.png') }}" alt="" class="h-16 w-16">
             <div>
                 <h1 class="text-lg font-bold text-neutral-50">Desa Kranggan</h1>
                 <p class="text-sm text-neutral-50">Kec. Pekuncen, Kab. Banyumas</p>
@@ -10,10 +12,10 @@
         </div>
 
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6 text-neutral-50 font-medium">
-            <a href="/index" class="hover:text-amber-400 transition duration-300">Beranda</a>
-            <a href="pemerintah" class="hover:text-amber-400 transition duration-300">Pemerintahan</a>
-            <a href="/statistik" class="hover:text-amber-400 transition duration-300">Statistik</a>
+        <nav class="hidden md:flex space-x-6 text-neutral-50 font-medium" id="navbar">
+            <a href="/index" class="hover:text-amber-400 transition duration-300 {{request()->routeIs('index') ? 'text-amber-400' : ''}}">Beranda</a>
+            <a href="pemerintah" class="hover:text-amber-400 transition duration-300 {{ request()->routeIs('pemerintah') ? 'text-amber-400' : ''}}">Pemerintahan</a>
+            <a href="/statistik" class="hover:text-amber-400 transition duration-300 {{ request()->routeIs('statistik') ? 'text-amber-400' : ''}}">Statistik</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Layanan</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Berita</a>
             <a href="#" class="hover:text-amber-400 transition duration-300">Galeri</a>
@@ -48,4 +50,6 @@
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+
+    
 </script>
