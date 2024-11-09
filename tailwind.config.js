@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['poppins', 'sans-serif'],
+                sans: ['Nunito', 'sans-serif'],
             },
             colors: {
                 nav: '#FFFFFF',

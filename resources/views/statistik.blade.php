@@ -1,8 +1,8 @@
 <x-tail/>
-<body class="bg-abu text-sm">
+<body class="bg-bgp">
     <x-nav/>
     <main class="container mx-auto py-10 px-4">
-        <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">Statistik Desa Kranggan</h2>
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Statistik Desa Kranggan</h2>
 
         <!-- Kependudukan Section -->
         <section class="mb-12">
@@ -80,43 +80,7 @@
             </div>
         </section>
         
-        {{-- <section>
-            <h3 class="text-3xl font-bold text-text mb-4">Tentang Desa</h3>
-            <p class="text-gray-700">Kranggan adalah desa di kecamatan Pekuncen, Banyumas, Jawa Tengah, Indonesia. Desa Desa Kranggan merupakan desa dengan luas wilayah terkecil di kecamatan Pekuncen sehingga hanya memiliki dua wilayah pedukuhan saja.</p>
-        </section>
-
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <!-- Statistik Card -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h4 class="text-xl font-bold text-text">Statistik Desa</h4>
-                <p class="text-gray-600 mt-2">Informasi tentang statistik kependudukan, pekerjaan, dan kondisi sosial ekonomi masyarakat desa.</p>
-            </div>
-
-            <!-- Layanan Card -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h4 class="text-xl font-bold text-text">Layanan Publik</h4>
-                <p class="text-gray-600 mt-2">Daftar layanan publik yang tersedia untuk masyarakat, termasuk pengurusan surat dan bantuan sosial.</p>
-            </div>
-
-            <!-- Produk Hukum Card -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h4 class="text-xl font-bold text-text">Produk Hukum</h4>
-                <p class="text-gray-600 mt-2">Dokumen produk hukum desa, seperti peraturan desa dan keputusan kepala desa.</p>
-            </div>
-
-            <!-- Berita Card -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h4 class="text-xl font-bold text-text">Berita Desa</h4>
-                <p class="text-gray-600 mt-2">Berita terbaru tentang kegiatan dan perkembangan di Desa Mandong.</p>
-            </div>
-
-            <!-- Galeri Card -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h4 class="text-xl font-bold text-text">Galeri Foto</h4>
-                <p class="text-gray-600 mt-2">Kumpulan foto kegiatan dan pemandangan di Desa Mandong.</p>
-            </div>
-        </section> --}}
-
+        
        
         
     </main>

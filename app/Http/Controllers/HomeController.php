@@ -15,4 +15,7 @@ class HomeController extends Controller
     public function pemerintah(){
         return view('pemerintah');
     }
+    public function layanan(){
+        return view('layanan');
+    }
 }

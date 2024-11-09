@@ -1,5 +1,5 @@
 <x-tail/>
-<bod class="bg-abu text-sm">
+<bod class="bg-bgp">
     <x-nav/>
     <div class="container mx-auto py-10">
         <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">STRUKTUR ORGANISASI</h2>

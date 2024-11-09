@@ -24,3 +24,4 @@ require __DIR__.'/auth.php';
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/statistik', [HomeController::class, 'statistik'])->name('statistik');
 Route::get('/pemerintah', [HomeController::class, 'pemerintah'])->name('pemerintah');
+Route::get('/layanan', [HomeController::class, 'layanan'])->name('layanan');
