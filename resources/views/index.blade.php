@@ -1,7 +1,7 @@
-
 <x-tail/>
 <body class="bg-bgp">
 <x-nav withoutBg/>
+
 
 <section class="relative bg-center bg-no-repeat bg-[url('/public/ya.png')] bg-zinc-900 bg-blend-multiply -mt-24">
     <!-- Konten Teks -->
@@ -58,10 +58,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Berita Item 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="{{ url('humam.jpeg') }}" alt="bingung" class="w-full h-48 object-cover">
+                    @foreach ($data as $data)
+                    <img  src="{{ url('/storage/' . $data->foto) }}"  class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Judul Berita 1</h4>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos itaque culpa facere! Accusantium, unde, ipsa corporis illo non esse eos culpa sequi, odit magni dolor voluptates omnis distinctio. Inventore, officiis.</p>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">{{$data->judul}}</h4>
+                        <textarea class="text-gray-600 mb-4 line-clamp-2">{{ $data->deskripsi }}</textarea>
                         <div class="flex justify-between items-center">
                             <p class="text-gray-500 -mb-2 text-sm">Penulis: ahyar</p>
                         <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -72,60 +73,7 @@
                         </a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Berita Item 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="{{ url('humam.jpeg') }}" alt="bingung" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Judul Berita 1</h4>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos itaque culpa facere! Accusantium, unde, ipsa corporis illo non esse eos culpa sequi, odit magni dolor voluptates omnis distinctio. Inventore, officiis.</p>
-                        <div class="flex justify-between items-center">
-                            <p class="text-gray-500 -mb-2 text-sm">Penulis: ahyar</p>
-                        <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Berita Item 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="{{ url('humam.jpeg') }}" alt="bingung" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Judul Berita 1</h4>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos itaque culpa facere! Accusantium, unde, ipsa corporis illo non esse eos culpa sequi, odit magni dolor voluptates omnis distinctio. Inventore, officiis.</p>
-                        <div class="flex justify-between items-center">
-                            <p class="text-gray-500 -mb-2 text-sm">Penulis: ahyar</p>
-                        <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="{{ url('humam.jpeg') }}" alt="bingung" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Judul Berita 1</h4>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos itaque culpa facere! Accusantium, unde, ipsa corporis illo non esse eos culpa sequi, odit magni dolor voluptates omnis distinctio. Inventore, officiis.</p>
-                        <div class="flex justify-between items-center">
-                            <p class="text-gray-500 -mb-2 text-sm">Penulis: ahyar</p>
-                        <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>

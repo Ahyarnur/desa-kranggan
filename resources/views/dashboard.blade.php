@@ -1,6 +1,6 @@
 <x-app-layout>
     <body class="bg-gray-100">
-    <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
+    {{-- <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
             <!-- Header -->
             <div class="bg-white p-6 rounded-lg shadow-md mb-8 mt-14">
                 <h1 class="text-2xl font-bold">Admin Panel - Kelola Berita</h1>
@@ -47,80 +47,57 @@
                     </table>
                 </div>
             </div>
-            </div>
-            {{-- <script>
-                let newsList = [];
-                let editingIndex = null;
-        
-                const form = document.getElementById("news-form");
-                const newsTableBody = document.getElementById("news-table-body");
-                const formTitle = document.getElementById("form-title");
-                const saveButton = document.getElementById("save-button");
-        
-                form.addEventListener("submit", (e) => {
-                    e.preventDefault();
-                    const title = document.getElementById("title").value;
-                    const content = document.getElementById("content").value;
-        
-                    if (editingIndex !== null) {
-                        // Update berita yang sedang diedit
-                        newsList[editingIndex] = { title, content };
-                        editingIndex = null;
-                        formTitle.innerText = "Tambah Berita";
-                        saveButton.innerText = "Simpan";
-                    } else {
-                        // Tambah berita baru
-                        newsList.push({ title, content });
-                    }
-        
-                    resetForm();
-                    renderTable();
-                });
-        
-                // Fungsi untuk menampilkan berita di tabel
-                function renderTable() {
-                    newsTableBody.innerHTML = "";
-                    newsList.forEach((news, index) => {
-                        const row = document.createElement("tr");
-        
-                        row.innerHTML = `
-                            <td class="py-2 px-4">${index + 1}</td>
-                            <td class="py-2 px-4">${news.title}</td>
-                            <td class="py-2 px-4">${news.content}</td>
-                            <td class="py-2 px-4">
-                                <button onclick="editNews(${index})" class="text-blue-600 hover:text-blue-800">Edit</button> |
-                                <button onclick="deleteNews(${index})" class="text-red-600 hover:text-red-800">Hapus</button>
-                            </td>
-                        `;
-                        newsTableBody.appendChild(row);
-                    });
-                }
-        
-                // Fungsi untuk mengedit berita
-                function editNews(index) {
-                    editingIndex = index;
-                    const news = newsList[index];
-                    document.getElementById("title").value = news.title;
-                    document.getElementById("content").value = news.content;
-                    formTitle.innerText = "Edit Berita";
-                    saveButton.innerText = "Perbarui";
-                }
-        
-                // Fungsi untuk menghapus berita
-                function deleteNews(index) {
-                    newsList.splice(index, 1);
-                    renderTable();
-                }
-        
-                // Fungsi untuk mereset form
-                function resetForm() {
-                    form.reset();
-                    editingIndex = null;
-                    formTitle.innerText = "Tambah Berita";
-                    saveButton.innerText = "Simpan";
-                }
-            </script> --}}
+            </div> --}}
+            
 
+
+            <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
+                <!-- Header -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8 mt-14">
+                    <h1 class="text-2xl font-bold">Admin Panel - Kelola Berita</h1>
+                </div>
+                <div class="flex mt-6">
+                    <h2 class="font-semibold text-xl">Add Products</h2>
+                    
+                </div>
+        
+        
+                <div class="mt-4" x-data="{ imageUrl: '/storage/noimage.png' }">
+                    <form enctype="multipart/form-data" action="{{ route('createpost')}}" method="post" class="flex gap-8">
+                        @csrf
+                        <div class="w-1/2">
+                            <img :src="imageUrl" class="rounded-md" />
+                        </div>
+        
+                        <div class="w-1/2">
+                            <div class="mt-4">
+                                <x-input-label for="foto"
+                                 :value="__('foto')" />
+                                <x-text-input accept="image/*" id="foto"
+                                 class="block mt-1 w-full border p-2" 
+                                 type="file" name="foto" :value="old('foto')" required @change="imageUrl = URL.createObjectURL($event.target.files[0])" />
+                                <x-input-error :messages="$errors->get('foto')" class="mt-2" />
+                            </div>
+                            
+                            <div class="mt-4">
+                                <x-input-label for="judul" :value="__('judul')" />
+                                <x-text-input id="judul" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan judul berita" type="text" name="judul" :value="old('judul')" required />
+                                <x-input-error :messages="$errors->get('judul')" class="mt-2" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-input-label for="deskripsi" :value="__('Deskripsi')" />
+                                <x-text-area id="deskripsi" class="block mt-1 w-full" type="text" name="deskripsi">{{old('deskripsi')}}</x-text-area>
+                                <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
+                            </div>
+                            <x-primary-button class="justify-center mt-4 w-full">
+                                {{ __('Submit') }}
+                            </x-primary-button>
+                           </div>
+                        
+                        </form>
+                </div>
+            </div>
             </body>
 </x-app-layout>
 
