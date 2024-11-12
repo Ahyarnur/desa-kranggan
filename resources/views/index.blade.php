@@ -1,9 +1,9 @@
 <x-tail/>
-<body class="bg-bgp">
-<x-nav withoutBg/>
+<x-nav withoutBg logoWhite navWhite/>
+<body class="">
 
 
-<section class="relative bg-center bg-no-repeat bg-[url('/public/ya.png')] bg-zinc-900 bg-blend-multiply -mt-24">
+<section class="relative bg-center bg-no-repeat bg-[url('/public/ya.png')] bg-zinc-600 bg-blend-multiply -mt-24">
     <!-- Konten Teks -->
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-5xl">
@@ -21,56 +21,64 @@
         </svg>
     </div>
 </section>
-</div>
-    <main class="container mx-auto py-10 px-4">
 
-        <section class="justify-center min-h-screen mt-24 gap-9 px-44">
-            <div class="text-start">
-                <h2 class="text-3xl text-center font-bold mb-4 text-slate-800">Visi</h2>
-                <p class="text-lg mt-4 text-text text-center">"Mewujudkan Desa yang Mandiri, Sejahtera, dan Berbudaya Berbasis pada Kearifan Lokal dan Pembangunan Berkelanjutan"</p>
+        <section class="flex flex-col lg:flex-row justify-center items-center gap-8 min-h-screen pt-28 px-4 lg:px-36">
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <img src="{{url('leaf1.jpg')}}" alt="" class="rounded-3xl shadow-lg hover:scale-105 transition duration-500 w-96 lg:w-[250px]">
             </div>
-            <div class="text-start mt-44">
-                <h2 class="text-3xl text-center font-bold mb-4 text-slate-800">Misi</h2>
-                <ul class="text-lg mt-4 text-text list-disc list-outside">
-                    <li>
-                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
-                    </li>
-                    <li>
-                        Mendorong pembentukan koperasi dan usaha desa (BUMDes) yang berperan aktif dalam meningkatkan pendapatan masyarakat.
-                    </li>
-                    <li>
-                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
-                    </li>
-                    <li>
-                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
-                    </li>
-                    <li>
-                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
-                    </li>
-                    <li class="mb-48">
-                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
-                    </li>
-                </ul>
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-3xl text-center font-bold mb-4 text-nav2">Visi</h2>
+
+                <p class="text-lg mt-4 text-neutral-500">"Mewujudkan Desa yang Mandiri, Sejahtera, dan Berbudaya Berbasis pada Kearifan Lokal dan Pembangunan Berkelanjutan"</p
             </div>
         </section>
-        <section>
-            <h3 class="text-3xl font-bold text-gray-800 mb-6">Berita Terbaru</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+        <!-- Visi Section -->
+        <section class="flex flex-col lg:flex-row justify-center items-center gap-10 min-h-screen py-8 mb-24 px-4 bg-nav2 lg:px-36">
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-3xl text-center font-bold mb-4 text-white pt-16">Misi</h2>
+                <ul class="text-lg mt-4 text-text list-disc list-outside">
+                    <li class="text-white">
+                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
+                    </li>
+                    <li class="text-white">
+                        Mendorong pembentukan koperasi dan usaha desa (BUMDes) yang berperan aktif dalam meningkatkan pendapatan masyarakat.
+                    </li>
+                    <li class="text-white">
+                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
+                    </li>
+                    <li class="mb-36 text-white">
+                        Mengembangkan potensi ekonomi desa melalui usaha kecil dan menengah, pertanian, pariwisata, serta industri kreatif berbasis sumber daya lokal.
+                    </li>
+    
+                </ul>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <img src="{{url('leaf1.jpg')}}" alt="" class="rounded-3xl shadow-lg mb-24 hover:scale-105 transition duration-500 w-96 lg:w-[350px]">
+            </div>
+        </section>
+        
+        <section class=" mx-auto py-10 px-24">
+            <h3 class="text-3xl font-bold flex justify-center text-nav2 mb-10">Berita Terbaru</h3>
+            <div class="">
                 <!-- Berita Item 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($data as $data)
-                    <img  src="{{ url('/storage/' . $data->foto) }}"  class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-2">{{$data->judul}}</h4>
-                        <textarea class="text-gray-600 mb-4 line-clamp-2">{{ $data->deskripsi }}</textarea>
-                        <div class="flex justify-between items-center">
-                            <p class="text-gray-500 -mb-2 text-sm">Penulis: ahyar</p>
-                        <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+
+                        <img  src="{{ url('/storage/' . $data->foto) }}"  class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">{{$data->judul}}</h4>
+                            <p class="text-gray-600 mb-4 line-clamp-2">{{ $data->deskripsi }}</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-gray-500 -mb-2 text-sm">Penulis: {{\App\Models\User::find($data->user_id)->name}}</p>
+                            <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </a>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -79,8 +87,8 @@
             </div>
         </section>
     
-        <div class="container mx-auto py-10 px-4">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center mt-32">Lokasi dan Kontak Balai Desa Kranggan</h2>
+        <div class="container mx-auto py-10 px-24">
+            <h2 class="text-2xl font-semibold text-nav2 mb-8 text-center mt-32">Lokasi dan Kontak Balai Desa Kranggan</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 
@@ -129,6 +137,7 @@
     <script>
         window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
+        const navbarlink = document.getElementById('navbarlink');
         const logoTitle = document.getElementById('logoTitle');
         const logoSubtitle = document.getElementById('logoSubtitle');
         
@@ -136,15 +145,25 @@
             // Tambahkan latar belakang putih pada navbar
             navbar.classList.remove('bg-transparent');
             navbar.classList.add('bg-nav');
-
+            navbar.classList.add('shadow-md');
+            navbar.classList.add('text-black');
+            
+            
             // Ubah teks menjadi hitam
             logoTitle.classList.remove('text-white');
             logoTitle.classList.add('text-black');
             logoSubtitle.classList.remove('text-white');
             logoSubtitle.classList.add('text-black');
+
+            navbarlink.classList.add("text-black");
+            navbarlink.classList.remove("text-white");
         } else {
             // Kembalikan latar belakang transparan pada navbar
             navbar.classList.remove('bg-nav');
+            navbar.classList.remove('shadow-md');
+            navbar.classList.add('text-white');
+            
+
             navbar.classList.add('bg-transparent');
 
             // Kembalikan teks menjadi putih
@@ -152,6 +171,9 @@
             logoTitle.classList.add('text-white');
             logoSubtitle.classList.remove('text-black');
             logoSubtitle.classList.add('text-white');
+
+            navbarlink.classList.remove("text-black");
+            navbarlink.classList.add("text-white");
         }
     });
     </script>

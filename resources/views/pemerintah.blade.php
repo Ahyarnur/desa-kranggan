@@ -1,8 +1,8 @@
 <x-tail/>
-<bod class="bg-bgp">
-    <x-nav/>
+<body class="bg-bgp">
+    <x-nav />
     <div class="container mx-auto py-10">
-        <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">STRUKTUR ORGANISASI</h2>
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">STRUKTUR ORGANISASI</h2>
         
         <div class="flex flex-col items-center">
            

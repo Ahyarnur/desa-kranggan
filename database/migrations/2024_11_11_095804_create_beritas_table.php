@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('deskripsi')->nullable();
             $table->string('foto')->default('noimage.png');
+            $table->foreignId(column: 'user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

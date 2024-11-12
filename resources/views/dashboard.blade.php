@@ -1,63 +1,12 @@
 <x-app-layout>
-    <body class="bg-gray-100">
-    {{-- <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
-            <!-- Header -->
-            <div class="bg-white p-6 rounded-lg shadow-md mb-8 mt-14">
-                <h1 class="text-2xl font-bold">Admin Panel - Kelola Berita</h1>
-            </div>
-            
-        
-            <div class="container mx-auto mt-8 px-4">
-                <!-- Form Tambah/Edit Berita -->
-                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-                    <h2 class="text-xl font-semibold mb-4" id="form-title">Tambah Berita</h2>
-                    <form id="news-form">
-                        <input type="hidden" id="news-id">
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700">Judul Berita:</label>
-                            <input type="text" id="title" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan judul berita" required>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700">Konten Berita:</label>
-                            <textarea id="content" class="w-full px-4 py-2 border rounded-md" placeholder="Masukkan konten berita" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700" id="save-button">Simpan</button>
-                        <button type="button" onclick="resetForm()" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 ml-2">Batal</button>
-                    </form>
-                </div>
-        
-                <!-- Tabel Daftar Berita -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold mb-4">Daftar Berita</h2>
-                    <table class="min-w-full bg-white">
-                        <thead>
-                            <tr>
-                                <th class="py-2 px-4 bg-gray-200 text-left">No</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">Judul</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">Konten</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody id="news-table-body">
-                            <!-- Data berita akan diisi secara dinamis oleh JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            </div> --}}
-            
-
-
-            <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
+    <body class="">
+<div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
                 <!-- Header -->
                 <div class="bg-white p-6 rounded-lg shadow-md mb-8 mt-14">
                     <h1 class="text-2xl font-bold">Admin Panel - Kelola Berita</h1>
                 </div>
                 <div class="flex mt-6">
-                    <h2 class="font-semibold text-xl">Add Products</h2>
+                    <h2 class="font-semibold text-xl">Tambah Berita</h2>
                     
                 </div>
         
@@ -97,7 +46,79 @@
                         
                         </form>
                 </div>
-            </div>
+
+                {{-- <div class="bg-white p-6 rounded-lg shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-gray-200 text-left">Foto Produk</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left">judul</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left">Deskripsi</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left">aksi</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($detail as $data)
+                                <tr>
+                                    <td class="border-b border-gray-200">
+                                        <img  src="{{ url('/storage/' . $data->foto) }}" class="w-16 h-16 object-cover">
+                                    </td>
+                                    <td class="text-right border-b border-gray-200">
+                                        {{ $data->judul }}
+                                    </td>
+                                    <td class="border-b border-gray-200">
+                                        {{ $data->deskripsi }}
+                                    </td>
+                        
+                                    <td class=" text-center border-b border-gray-200">
+                                        <a href="#" class="text-lime-500 hover:text-red-800">
+                                            Edit
+                                        </a>
+                                        <a href="#" class="text-red-600 hover:text-red-800">
+                                            Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                       
+                </div> --}}
+
+                <div class="overflow-x-auto mt-24">
+                    <table class="table">
+                      <!-- head -->
+                      <thead>
+                        <tr>
+                          <th class="border-b border-gray-400">NO</th>
+                          <th class="border-b border-gray-400">Foto</th>
+                          <th class="border-b border-gray-400">Judul</th>
+                          <th class="border-b border-gray-400">Deskripsi</th>
+                          <th class="border-b border-gray-400">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($detail as $data)
+                        <!-- row 1 -->
+                        <tr>
+                          <th>{{$data->id}}</th>
+                          <td> <img  src="{{ url('/storage/' . $data->foto) }}" class="w-16 h-16 object-cover"></td>
+                          <td>{{$data->judul}}</td>
+                          <td>{{$data->deskripsi}}</td>
+                          <td>
+                            <a href="#" class="text-lime-500 hover:text-lime-800">
+                                Edit
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800">
+                                Hapus
+                            </a>
+                          </td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
             </body>
 </x-app-layout>
 

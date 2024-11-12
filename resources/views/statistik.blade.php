@@ -2,7 +2,7 @@
 <body class="bg-bgp">
     <x-nav/>
     <main class="container mx-auto py-10 px-4">
-        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Statistik Desa Kranggan</h2>
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">Statistik Desa Kranggan</h2>
 
         <!-- Kependudukan Section -->
         <section class="mb-12">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -16,13 +18,15 @@ class BeritaController extends Controller
 
 
         $foto = $request->file('foto');
-        $foto->storeAs('public', $foto->hashName());
+        $lokasi = Storage::disk('public')->putFile('berita', $foto);
+        
 
         Berita::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'foto' => $foto->hashName()
+            'foto' => $lokasi,
             
+            'user_id' => Auth::id()
         ]);
         
         return redirect()->route('index'); 
@@ -30,6 +34,7 @@ class BeritaController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard');
+        $detail = Berita::all();
+        return view('dashboard', compact('detail'));
     }
 }

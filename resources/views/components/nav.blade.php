@@ -1,4 +1,4 @@
-@props(['withoutBg' => false])
+@props(['withoutBg' => false, 'logoWhite' => false, 'navWhite' => false])
 
 <header class="{{ $withoutBg ? '' : 'bg-nav' }} sticky top-0 z-50 transition-colors duration-500 ease-in-out" id="navbar">
     <div class="container mx-auto flex justify-between items-center h-20 px-6 lg:px-8">
@@ -6,19 +6,19 @@
         <div class="flex items-center space-x-2">
             <img src="{{ url('logo.png') }}" alt="" class="h-16 w-16">
             <div>
-                <h1 class="text-lg font-bold text-black transition-colors duration-300 ease-in-out" id="logoTitle">Desa Kranggan</h1>
-                <p class="text-sm text-black transition-colors duration-300 ease-in-out" id="logoSubtitle">Kec. Pekuncen, Kab. Banyumas</p>
+                <h1 class="text-lg font-bold {{ $logoWhite ? 'text-white' : 'text-black' }} transition-colors duration-300 ease-in-out" id="logoTitle">Desa Kranggan</h1>
+                <p class="text-sm {{ $logoWhite ? 'text-white' : 'text-black' }} transition-colors duration-300 ease-in-out" id="logoSubtitle">Kec. Pekuncen, Kab. Banyumas</p>
             </div>
         </div>
 
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6 text-textnav font-medium" id="navbar">
-            <a href="/index" class="hover:text-nav2 transition duration-300 {{request()->routeIs('index') ? 'text-nav2' : ''}}">Beranda</a>
+        <nav class="hidden md:flex space-x-6  {{ $navWhite ? 'text-white' : 'text-black' }} font-medium" id="navbarlink">
+            <a href="/index" class="hover:text-nav2 transition duration-300 font-extrabold {{request()->routeIs('index') ? 'text-nav2' : ''}}">Beranda</a>
             <a href="pemerintah" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('pemerintah') ? 'text-nav2' : ''}}">Pemerintahan</a>
             <a href="/statistik" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('statistik') ? 'text-nav2' : ''}}">Statistik</a>
             <a href="/layanan" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('layanan') ? 'text-nav2' : ''}}">Layanan</a>
-            <a href="#" class="hover:text-amber-400 transition duration-300">Berita</a>
-            <a href="#" class="hover:text-amber-400 transition duration-300">Galeri</a>
+            <a href="#" class="hover:text-nav2 transition duration-300">Berita</a>
+            <a href="#" class="hover:text-nav2 transition duration-300">Galeri</a>
         </nav>
 
         <!-- Mobile Menu Button -->
