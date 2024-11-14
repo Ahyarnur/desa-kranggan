@@ -58,13 +58,12 @@
             </div>
         </section>
         
-        <section class=" mx-auto py-10 px-24">
+        {{-- <section class=" mx-auto py-10 px-24">
             <h3 class="text-3xl font-bold flex justify-center text-nav2 mb-10">Berita Terbaru</h3>
-            <div class="">
+            <div class=""> --}}
                 <!-- Berita Item 1 -->
-                <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    @foreach ($data as $data)
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                {{-- <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> --}}
+                    {{-- <div class="bg-white rounded-lg shadow-lg overflow-hidden">
 
                         <img  src="{{ url('/storage/' . $data->foto) }}"  class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -80,12 +79,25 @@
                             </a>
                             </div>
                         </div>
+                    </div> --}}
+                    <section class=" mx-auto py-10 px-24">
+                    <h1 class="text-2xl font-bold text-gray-900">Berita Terbaru</h1>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                <!-- Berita Utama 1 -->
+                @foreach ($data as $data)
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ url('/storage/' . $data->foto) }}" alt="Image 1" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <a href="/detail/{{ $data->id }}" class="font-semibold text-lg text-gray-800 hover:text-indigo-900">{{ $data->judul }}</a>
+                        <div class="flex justify-between items-center">
+                            <p class="text-sm text-nav2">{{\App\Models\User::find($data->user_id)->name}}</p>
+                        </div>
                     </div>
+                </div>
                     @endforeach
                 </div>
-
             </div>
-        </section>
+       </section>
     
         <div class="container mx-auto py-10 px-24">
             <h2 class="text-2xl font-semibold text-nav2 mb-8 text-center mt-32">Lokasi dan Kontak Balai Desa Kranggan</h2>

@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-gray-700 text-sm font-medium">Resto / Cafe</h3>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Administrasi dan Kependudukan</h3>
             </div>
 
             <!-- Card 2 -->
@@ -29,7 +29,7 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-gray-700 text-sm font-medium">Fashion</h3>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Kesehatan</h3>
             </div>
 
             <!-- Card 3 -->
@@ -41,7 +41,7 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-gray-700 text-sm font-medium">Minimarket</h3>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Pendidikan dan Pelatihan</h3>
             </div>
 
             <!-- Card 4 -->
@@ -53,11 +53,42 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-gray-700 text-sm font-medium">Laundry</h3>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Keamanan dan Ketertiban</h3>
             </div>
 
             <!-- Card 5 -->
+
+            <div class="bg-white rounded-lg shadow-lg p-6 group">
+                <div class="flex justify-center items-center mb-4">
+                    <div class="bg-gray-100 rounded-full p-4">
+                        <svg class="w-8 h-8 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M6 8h12M6 16h12" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Infrastruktur Desa </h3>
+            </div>
             
+            <div class="bg-white rounded-lg shadow-lg p-6 group">
+                <div class="flex justify-center items-center mb-4">
+                    <div class="bg-gray-100 rounded-full p-4">
+                        <svg class="w-8 h-8 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M6 8h12M6 16h12" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Sosial dan Kesejahteraan Masyarakat</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 group">
+                <div class="flex justify-center items-center mb-4">
+                    <div class="bg-gray-100 rounded-full p-4">
+                        <svg class="w-8 h-8 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M6 8h12M6 16h12" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-gray-700 text-sm font-medium">Layanan Teknologi dan Informasi</h3>
+            </div>
         </div>
     </div>
     </div>

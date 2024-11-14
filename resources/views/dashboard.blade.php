@@ -36,7 +36,7 @@
 
                             <div class="mt-4">
                                 <x-input-label for="deskripsi" :value="__('Deskripsi')" />
-                                <x-text-area id="deskripsi" class="block mt-1 w-full" type="text" name="deskripsi">{{old('deskripsi')}}</x-text-area>
+                                <x-text-area id="deskripsi" class="block mt-1 w-full" type="text"  name="deskripsi">{{old('deskripsi')}}</x-text-area>
                                 <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
                             </div>
                             <x-primary-button class="justify-center mt-4 w-full">
@@ -47,45 +47,7 @@
                         </form>
                 </div>
 
-                {{-- <div class="bg-white p-6 rounded-lg shadow-md">
-                    <table class="min-w-full bg-white">
-                        <thead>
-                            <tr>
-                                <th class="py-2 px-4 bg-gray-200 text-left">Foto Produk</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">judul</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">Deskripsi</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left">aksi</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($detail as $data)
-                                <tr>
-                                    <td class="border-b border-gray-200">
-                                        <img  src="{{ url('/storage/' . $data->foto) }}" class="w-16 h-16 object-cover">
-                                    </td>
-                                    <td class="text-right border-b border-gray-200">
-                                        {{ $data->judul }}
-                                    </td>
-                                    <td class="border-b border-gray-200">
-                                        {{ $data->deskripsi }}
-                                    </td>
-                        
-                                    <td class=" text-center border-b border-gray-200">
-                                        <a href="#" class="text-lime-500 hover:text-red-800">
-                                            Edit
-                                        </a>
-                                        <a href="#" class="text-red-600 hover:text-red-800">
-                                            Hapus
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                       
-                </div> --}}
-
+               
                 <div class="overflow-x-auto mt-24">
                     <table class="table">
                       <!-- head -->
@@ -107,10 +69,10 @@
                           <td>{{$data->judul}}</td>
                           <td>{{$data->deskripsi}}</td>
                           <td>
-                            <a href="#" class="text-lime-500 hover:text-lime-800">
+                            <a href="/edit/{{$data->id}}" class="text-lime-500 hover:text-lime-800">
                                 Edit
                             </a>
-                            <a href="#" class="text-red-600 hover:text-red-800">
+                            <a href="{{ route('delete', $data->id) }}" class="text-red-600 hover:text-red-800">
                                 Hapus
                             </a>
                           </td>

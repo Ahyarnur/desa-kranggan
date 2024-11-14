@@ -17,8 +17,8 @@
             <a href="pemerintah" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('pemerintah') ? 'text-nav2' : ''}}">Pemerintahan</a>
             <a href="/statistik" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('statistik') ? 'text-nav2' : ''}}">Statistik</a>
             <a href="/layanan" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('layanan') ? 'text-nav2' : ''}}">Layanan</a>
-            <a href="#" class="hover:text-nav2 transition duration-300">Berita</a>
-            <a href="#" class="hover:text-nav2 transition duration-300">Galeri</a>
+            <a href="/berita" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('berita') ? 'text-nav2' : ''}}">Berita</a>
+            <a href="/galeri" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('galeri') ? 'text-nav2' : ''}}">Galeri</a>
         </nav>
 
         <!-- Mobile Menu Button -->

@@ -29,12 +29,45 @@ class BeritaController extends Controller
             'user_id' => Auth::id()
         ]);
         
-        return redirect()->route('index'); 
+        return redirect()->back(); 
        
     }
 
     public function dashboard(){
         $detail = Berita::all();
         return view('dashboard', compact('detail'));
+    }
+
+    public function delete($id)
+    {
+        $news = Berita::find($id);
+
+        $news->delete();
+
+        return redirect()->back();
+    }
+
+    public function edit($id){
+        $edit = Berita::find($id);
+        return view('edit',compact('edit'));
+    }
+
+    public function update(Request $request, $id){
+        $product = Berita::find($id);
+        $product->judul = $request->judul;
+        $product->deskripsi = $request->deskripsi;
+
+        if ($request->file('foto')) {
+
+            Storage::disk('local')->delete('public/'.$product->foto);
+            $foto = $request->file('foto');
+            $foto->storeAs('public', $foto->hashName());
+            $product->foto = $foto->hashName();
+        }
+        
+
+        $product->save();
+        return redirect()->route('dashboard');
+
     }
 }

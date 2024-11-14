@@ -18,6 +18,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('createpost', action: [BeritaController::class, 'createpost'])->name('createpost');
     Route::get('/dashboard', action: [BeritaController::class, 'dashboard'])->name('dashboard');
+    Route::get('delete/{id}', action: [BeritaController::class, 'delete'])->name('delete');
+    Route::get('edit/{id}', action: [BeritaController::class, 'edit'])->name('edit');
+    Route::put('update/{id}', [BeritaController::class, 'update'])->name('update');
 });
 
 
@@ -27,3 +30,6 @@ Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/statistik', [HomeController::class, 'statistik'])->name('statistik');
 Route::get('/pemerintah', [HomeController::class, 'pemerintah'])->name('pemerintah');
 Route::get('/layanan', [HomeController::class, 'layanan'])->name('layanan');
+Route::get('/berita', [HomeController::class, 'berita'])->name('berita');
+Route::get('detail/{id}', [HomeController::class, 'detail'])->name('detail');
+
