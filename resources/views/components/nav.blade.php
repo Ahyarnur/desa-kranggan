@@ -12,13 +12,12 @@
         </div>
 
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6  {{ $navWhite ? 'text-white' : 'text-black' }} font-medium" id="navbarlink">
-            <a href="/index" class="hover:text-nav2 transition duration-300 font-extrabold {{request()->routeIs('index') ? 'text-nav2' : ''}}">Beranda</a>
-            <a href="pemerintah" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('pemerintah') ? 'text-nav2' : ''}}">Pemerintahan</a>
-            <a href="/statistik" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('statistik') ? 'text-nav2' : ''}}">Statistik</a>
-            <a href="/layanan" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('layanan') ? 'text-nav2' : ''}}">Layanan</a>
-            <a href="/berita" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('berita') ? 'text-nav2' : ''}}">Berita</a>
-            <a href="/galeri" class="hover:text-nav2 transition duration-300 {{ request()->routeIs('galeri') ? 'text-nav2' : ''}}">Galeri</a>
+        <nav class="hidden md:flex space-x-6  {{ $navWhite ? 'text-white' : 'text-black' }} font-medium " id="navbarlink">
+            <a href="/index" class="hover:text-nav2  duration-300 relative  cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] {{request()->routeIs('index') ? 'text-nav2' : ''}}">Beranda</a>
+            <a href="pemerintah" class="hover:text-nav2  duration-300 relative   cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] {{ request()->routeIs('pemerintah') ? 'text-nav2' : ''}}">Pemerintahan</a>
+            <a href="/statistik" class="hover:text-nav2  duration-300 relative cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] {{ request()->routeIs('statistik') ? 'text-nav2' : ''}}">Statistik</a>
+            <a href="/layanan" class="hover:text-nav2  duration-300 relative cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] {{ request()->routeIs('layanan') ? 'text-nav2' : ''}}">Layanan</a>
+            <a href="/berita" class="hover:text-nav2  duration-300 relative  cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] {{ request()->routeIs('berita') ? 'text-nav2' : ''}}">Berita</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -38,7 +37,6 @@
             <a href="#" class="hover:text-green-600 transition duration-300 w-full">Layanan</a>
             <a href="#" class="hover:text-green-600 transition duration-300 w-full">Produk Hukum</a>
             <a href="#" class="hover:text-green-600 transition duration-300 w-full">Berita</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Galeri</a>
         </nav>
     </div>
 </header>

@@ -1,4 +1,5 @@
 <x-tail/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <x-nav withoutBg logoWhite navWhite/>
 <body class="">
 
@@ -23,10 +24,14 @@
 </section>
 
         <section class="flex flex-col lg:flex-row justify-center items-center gap-8 min-h-screen pt-28 px-4 lg:px-36">
-            <div class="w-full lg:w-1/2 flex justify-center">
+            <div data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine" class="w-full lg:w-1/2 flex justify-center">
                 <img src="{{url('leaf1.jpg')}}" alt="" class="rounded-3xl shadow-lg hover:scale-105 transition duration-500 w-96 lg:w-[250px]">
             </div>
-            <div class="w-full lg:w-1/2">
+            <div data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine" class="w-full lg:w-1/2">
                 <h2 class="text-3xl text-center font-bold mb-4 text-nav2">Visi</h2>
 
                 <p class="text-lg mt-4 text-neutral-500">"Mewujudkan Desa yang Mandiri, Sejahtera, dan Berbudaya Berbasis pada Kearifan Lokal dan Pembangunan Berkelanjutan"</p
@@ -35,7 +40,9 @@
     
         <!-- Visi Section -->
         <section class="flex flex-col lg:flex-row justify-center items-center gap-10 min-h-screen py-8 mb-24 px-4 bg-nav2 lg:px-36">
-            <div class="w-full lg:w-1/2">
+            <div data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine" class="w-full lg:w-1/2">
                 <h2 class="text-3xl text-center font-bold mb-4 text-white pt-16">Misi</h2>
                 <ul class="text-lg mt-4 text-text list-disc list-outside">
                     <li class="text-white">
@@ -53,48 +60,41 @@
     
                 </ul>
             </div>
-            <div class="w-full lg:w-1/2 flex justify-center">
+            <div data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine" class="w-full lg:w-1/2 flex justify-center">
                 <img src="{{url('leaf1.jpg')}}" alt="" class="rounded-3xl shadow-lg mb-24 hover:scale-105 transition duration-500 w-96 lg:w-[350px]">
             </div>
         </section>
-        
-        {{-- <section class=" mx-auto py-10 px-24">
-            <h3 class="text-3xl font-bold flex justify-center text-nav2 mb-10">Berita Terbaru</h3>
-            <div class=""> --}}
-                <!-- Berita Item 1 -->
-                {{-- <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> --}}
-                    {{-- <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-
-                        <img  src="{{ url('/storage/' . $data->foto) }}"  class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">{{$data->judul}}</h4>
-                            <p class="text-gray-600 mb-4 line-clamp-2">{{ $data->deskripsi }}</p>
-                            <div class="flex justify-between items-center">
-                                <p class="text-gray-500 -mb-2 text-sm">Penulis: {{\App\Models\User::find($data->user_id)->name}}</p>
-                            <a href="#" class="inline-flex items-center px-2 py-1 text-sm mt-3 font-medium text-center text-white bg-nav2 rounded-lg hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <section class=" mx-auto py-10 px-24">
-                    <h1 class="text-2xl font-bold text-gray-900">Berita Terbaru</h1>
+        <section class=" mx-auto py-10 px-24">
+                    <div class="px-3 border-l-4 border-rose-700">
+                            <h1 class="text-2xl font-bold text-gray-900 ">Berita Terbaru</h1>
+                     </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
                 <!-- Berita Utama 1 -->
                 @foreach ($data as $data)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="{{ url('/storage/' . $data->foto) }}" alt="Image 1" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <a href="/detail/{{ $data->id }}" class="font-semibold text-lg text-gray-800 hover:text-indigo-900">{{ $data->judul }}</a>
-                        <div class="flex justify-between items-center">
-                            <p class="text-sm text-nav2">{{\App\Models\User::find($data->user_id)->name}}</p>
-                        </div>
+                    <img src="{{ url('/storage/' . $data->foto) }}" alt="Image 1" class="w-full h-44 object-cover">
+                    <div class="p-4 flex flex-col justify-between h-40">
+                            <a href="/detail/{{ $data->id }}" class="font-semibold text-lg text-gray-800 hover:text-indigo-900">{{ $data->judul }}</a>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13Z"></path></svg>
+                                    <p class="text-sm text-nav2">{{\App\Models\User::find($data->user_id)->name}}</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
+                                    <p class="text-xs">{{ \Carbon\Carbon::parse($data->created_at)->locale('id')->isoFormat('dddd, D MMMM Y')}}</p>
+                                </div>
+                            </div>
+
                     </div>
                 </div>
                     @endforeach
+                </div>
+                <div class="flex justify-center mt-8">
+
+                    <button class="rounded-lg flex items-center gap-1 bg-nav2 text-white pl-2 pr-2">Lihat Lainnya <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button>
                 </div>
             </div>
        </section>
@@ -189,4 +189,8 @@
         }
     });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>

@@ -68,12 +68,13 @@
                           <td> <img  src="{{ url('/storage/' . $data->foto) }}" class="w-16 h-16 object-cover"></td>
                           <td>{{$data->judul}}</td>
                           <td>{{$data->deskripsi}}</td>
-                          <td>
+                          <td class="flex">
                             <a href="/edit/{{$data->id}}" class="text-lime-500 hover:text-lime-800">
-                                Edit
+                              <x-bx-edit class="h-6 w-6" />
                             </a>
+                            
                             <a href="{{ route('delete', $data->id) }}" class="text-red-600 hover:text-red-800">
-                                Hapus
+                              <x-eos-delete class="h-6 w-6" />
                             </a>
                           </td>
                         </tr>

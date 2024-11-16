@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $data = Berita::all();
+        $data = Berita::orderBy('created_at', 'desc')->paginate(4);
+
         
         return view('index', compact('data'));
     }
@@ -23,7 +24,8 @@ class HomeController extends Controller
         return view('layanan');
     }
     public function berita(){
-        $data = Berita::all();
+        $data = Berita::orderBy('created_at', 'desc')->get();
+
         return view('berita', compact('data'));
     }
 
