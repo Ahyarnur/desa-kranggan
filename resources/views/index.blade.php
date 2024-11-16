@@ -93,8 +93,10 @@
                     @endforeach
                 </div>
                 <div class="flex justify-center mt-8">
+                    <a href="/berita">
 
-                    <button class="rounded-lg flex items-center gap-1 bg-nav2 text-white pl-2 pr-2">Lihat Lainnya <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button>
+                        <button class="rounded-lg flex items-center gap-1 bg-nav2 text-white py-1,5 px-3">Lihat Lainnya <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button>
+                    </a>
                 </div>
             </div>
        </section>
