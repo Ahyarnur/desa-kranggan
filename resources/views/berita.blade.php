@@ -33,7 +33,7 @@
                     <img src="{{ url('/storage/' . $item->foto) }}" class="object-cover w-full h-full" alt="{{ $item->judul }}">
                     <!-- Overlay -->
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
-                        <p class="text-sm text-gray-300">{{ $item->created_at->diffForHumans() }}</p>
+                        <p class="text-sm text-gray-300 px-4">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat(' D MMMM Y')}}</p>
                         <div class="flex items-center px-3 border-l-4 border-rose-700">
                             
                             <h2 class="text-xl font-bold text-white">{{ $item->judul }}</h2>
@@ -72,7 +72,7 @@
                         <a href="/detail/{{ $item->id }}" class="font-semibold text-lg text-gray-800 hover:text-indigo-900">{{ $item->judul }}</a>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>   
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13Z"></path></svg>
                                 <p class="text-sm text-nav2">{{\App\Models\User::find($item->user_id)->name}}</p>
                             </div>
                             <div class="flex items-center">
