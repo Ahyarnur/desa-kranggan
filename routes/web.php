@@ -20,7 +20,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', action: [BeritaController::class, 'dashboard'])->name('dashboard');
     Route::get('delete/{id}', action: [BeritaController::class, 'delete'])->name('delete');
     Route::get('edit/{id}', action: [BeritaController::class, 'edit'])->name('edit');
+    Route::get('kelola', action: [BeritaController::class, 'kelola'])->name('kelola');
     Route::put('update/{id}', [BeritaController::class, 'update'])->name('update');
+    Route::get('/datasta', action: [BeritaController::class, 'datasta'])->name('datasta');
+    Route::put('/updatesta', [BeritaController::class, 'updatesta'])->name('updatesta');
+    Route::get('/get-data-statistik', action: [BeritaController::class, 'getDataStatistik'])->name('getDataStatistik');
+
 });
 
 

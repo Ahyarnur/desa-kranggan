@@ -12,6 +12,7 @@ export default {
     daisyui: {
         themes: ["light"],
       },
+      safelist: ['!text-black'],
     theme: {
         extend: {
             fontFamily: {

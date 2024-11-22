@@ -1,6 +1,7 @@
 <x-app-layout>
     <body class="">
 <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8 px-2 pb-96">
+
                 <!-- Header -->
                 <div class="bg-white p-6 rounded-lg shadow-md mb-8 mt-14">
                     <h1 class="text-2xl font-bold">Admin Panel - Kelola Berita</h1>
@@ -47,42 +48,51 @@
                         </form>
                 </div>
 
-               
-                <div class="overflow-x-auto mt-24">
-                    <table class="table">
-                      <!-- head -->
-                      <thead>
-                        <tr>
-                          <th class="border-b border-gray-400">NO</th>
-                          <th class="border-b border-gray-400">Foto</th>
-                          <th class="border-b border-gray-400">Judul</th>
-                          <th class="border-b border-gray-400">Deskripsi</th>
-                          <th class="border-b border-gray-400">Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach($detail as $data)
-                        <!-- row 1 -->
-                        <tr>
-                          <th>{{$data->id}}</th>
-                          <td> <img  src="{{ url('/storage/' . $data->foto) }}" class="w-16 h-16 object-cover"></td>
-                          <td>{{$data->judul}}</td>
-                          <td>{{$data->deskripsi}}</td>
-                          <td class="flex">
-                            <a href="/edit/{{$data->id}}" class="text-lime-500 hover:text-lime-800">
-                              <x-bx-edit class="h-6 w-6" />
-                            </a>
-                            
-                            <a href="{{ route('delete', $data->id) }}" class="text-red-600 hover:text-red-800">
-                              <x-eos-delete class="h-6 w-6" />
-                            </a>
-                          </td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-            </body>
-</x-app-layout>
 
+                <section class="mb-12 mt-32">
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+               
+                
+                  
+                <div class="max-w-sm p-3 bg-white border h-52 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div class="p-4 flex flex-col justify-between h-28">
+                    <div class="p-2 rounded-lg ">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kelola Berita</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lihat data berita yang sudah anda buat disini</p>
+                </div>
+                <div class="flex ml-1">
+                  <a href="/kelola" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Kelola Data
+                      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                      </svg>
+                  </a>
+                </div>
+                  </div>
+                  </div>
+
+                <div class="max-w-sm p-3 bg-white border h-52 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div class="p-4 flex flex-col">
+                    <div class="p-2 rounded-lg ">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kelola Data</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">sesuaikan dan atur data statistik desa anda disini </p>
+                </div>
+                <div class="flex ml-1">
+                  <a href="/datasta" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Kelola Data Statistik Desa
+                      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                      </svg>
+                  </a>
+                </div>
+                  </div>
+                  </div>
+                </div>
+
+              </section>
+               
+                
+            </body>
+          </x-app-layout>
+          <x-footer/>
 

@@ -7,7 +7,7 @@
 <section class="relative bg-center bg-no-repeat bg-[url('/public/ya.png')] bg-zinc-600 bg-blend-multiply -mt-24">
     <!-- Konten Teks -->
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-5xl">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-5xl md:mt-0 mt-20">
             Selamat Datang Di Desa Kranggan
         </h1>
         <p class="mb-8 text-lg font-normal text-gray-300 lg:text-sm sm:px-16 lg:px-48">
@@ -16,8 +16,8 @@
     </div>
 
     <!-- SVG Lengkungan Custom -->
-    <div class="absolute -bottom-2 left-0 w-full overflow-hidden leading-[0]">
-        <svg width="1350" height="45" viewBox="0 0 1920 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="absolute -bottom-5 md:-bottom-2 left-0 overflow-hidden leading-[0]">
+        <svg width="1350" height="45" class="w-full" viewBox="0 0 1920 45" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0444336L0 44.9999H1920V0.517933C1821.31 11.6701 1429.87 19.9999 962 19.9999C487.534 19.9999 91.6605 11.4335 0 0.0444336Z" fill="white"/>
         </svg>
     </div>
@@ -66,7 +66,7 @@
                 <img src="{{url('leaf1.jpg')}}" alt="" class="rounded-3xl shadow-lg mb-24 hover:scale-105 transition duration-500 w-96 lg:w-[350px]">
             </div>
         </section>
-        <section class=" mx-auto py-10 px-24">
+        <section class=" mx-auto py-10 px-4 md:px-24">
                     <div class="px-3 border-l-4 border-rose-700">
                             <h1 class="text-2xl font-bold text-gray-900 ">Berita Terbaru</h1>
                      </div>

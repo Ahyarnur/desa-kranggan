@@ -21,7 +21,7 @@
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuButton" class="md:hidden text-black focus:outline-none">
+        <button id="mobileMenuButton" class="md:hidden {{ $logoWhite ? 'text-white' : 'text-black'}} focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -31,12 +31,11 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="md:hidden bg-white shadow-lg hidden">
         <nav class="flex flex-col items-start px-6 py-4 space-y-2 text-gray-700">
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Desa</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Pemerintahan</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Statistik</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Layanan</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Produk Hukum</a>
-            <a href="#" class="hover:text-green-600 transition duration-300 w-full">Berita</a>
+            <a href="/beranda" class="hover:text-green-600 transition duration-300 w-full">Beranda</a>
+            <a href="/pemerintah" class="hover:text-green-600 transition duration-300 w-full">Pemerintahan</a>
+            <a href="/statistik" class="hover:text-green-600 transition duration-300 w-full">Statistik</a>
+            <a href="/layanan" class="hover:text-green-600 transition duration-300 w-full">Layanan</a>
+            <a href="/berita" class="hover:text-green-600 transition duration-300 w-full">Berita</a>
         </nav>
     </div>
 </header>
@@ -47,6 +46,9 @@
     
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        document.getElementById('mobileMenuButton').classList.toggle('!text-black')
+        document.getElementById('logoSubtitle').classList.toggle('!text-black')
+        document.getElementById('logoTitle').classList.toggle('!text-black')
     });
 
     

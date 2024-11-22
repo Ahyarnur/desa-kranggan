@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Statis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -37,6 +38,10 @@ class BeritaController extends Controller
         $detail = Berita::all();
         return view('dashboard', compact('detail'));
     }
+    public function kelola(){
+        $detail = Berita::all();
+        return view('kelola', compact('detail'));
+    }
 
     public function delete($id)
     {
@@ -70,4 +75,34 @@ class BeritaController extends Controller
         return redirect()->route('dashboard');
 
     }
+    public function datasta(){
+        $statis = Statis::all();
+        return view('datasta', compact('statis'));
+    }
+
+    public function updatesta(Request $request)
+    {
+    
+        // Validasi input
+        $request->validate([
+            'kategori' => 'required',
+            'jumlah' => 'required',
+        ]);
+    $edit = Statis::find($request->kategori);
+
+    // Update data statistik
+    $edit->jumlah = $request->jumlah;
+    $edit->save(); // Simpan perubahan ke database
+
+    // Redirect kembali ke dashboard atau halaman statistik
+    return redirect()->route('dashboard')->with('success', 'Statistik berhasil diperbarui');
+}
+
+public function getDataStatistik()
+{
+    $statis = Statis::all(); // Ambil semua data statistik
+    return response()->json($statis); // Kirim data dalam format JSON
+}
+
+
 }
